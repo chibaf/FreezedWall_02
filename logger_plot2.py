@@ -19,6 +19,7 @@ current_time=time.strftime("_H%H_M%M_S%S",t)
 fn=str(today)+current_time+".csv"
 f=open(fn,'w',encoding="utf-8")
 
+start = time.time()
 while True:
   try:
     array=sport.read_logger(ser)
@@ -42,8 +43,8 @@ while True:
       plt.legend(handles=[line1,line2,line3,line4,line5,line6,line7,line8,line9,line10])
       plt.pause(0.1)
       if len(array)==10:
-        dt_now = datetime.datetime.now()
-        strg=str(dt_now)+","+str(array[0])+","+str(array[1])+","+str(array[2])+","+str(array[3])+","+str(array[4])+","+str(array[5])+","+str(array[6])+","+str(array[7])+","+str(array[8])+","+str(array[9])
+        ttime=time.time()-start
+        strg=str(date.today())+","+str(ttime)+","+str(array[0])+","+str(array[1])+","+str(array[2])+","+str(array[3])+","+str(array[4])+","+str(array[5])+","+str(array[6])+","+str(array[7])+","+str(array[8])+","+str(array[9])
         f.write(strg+"\n")
       else:
         f.write(str(array)+"\n")
