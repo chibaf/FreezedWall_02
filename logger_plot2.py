@@ -21,6 +21,8 @@ f=open(fn,'w',encoding="utf-8")
 start = time.time()
 while True:
   ttime=time.time()-start
+  if ttime<0.001:
+    ttime=0.0
   try:
     array=sport.read_logger(ser)
     if len(array)==10:
