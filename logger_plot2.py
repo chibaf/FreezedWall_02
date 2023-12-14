@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import serial
 import sys
+import time
+from datetime import date
 import datetime
 
 from read_m5_class import m5logger
@@ -11,10 +13,10 @@ data=[data0]*100
 ser = serial.Serial(sys.argv[2],sys.argv[1])
 sport=m5logger()
 
-if len(sys.argv)<4:
-  fn="test.csv"
-else:
-  fn=sys.argv[3]
+today = date.today()
+t=time.localtime()
+current_time=time.strftime("_H%H_M%M_S%S",t)
+fn=str(today)+current_time+".csv"
 f=open(fn,'w',encoding="utf-8")
 
 while True:
@@ -26,7 +28,7 @@ while True:
       rez = [[data[j][i] for j in range(len(data))] for i in range(len(data[0]))]
       x=range(0, 100, 1)
       plt.clf()
-      plt.ylim(-100,40)
+      plt.ylim(-100,60)
       line1,=plt.plot(x,rez[0],label="L1")
       line2,=plt.plot(x,rez[1],label="L2")
       line3,=plt.plot(x,rez[2],label="L3")
