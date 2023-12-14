@@ -4,7 +4,6 @@ import sys
 import time
 from datetime import date
 import datetime
-
 from read_m5_class import m5logger
 
 data0=[0]*10
