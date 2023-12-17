@@ -31,7 +31,7 @@ while True:
       rez = [[data[j][i] for j in range(len(data))] for i in range(len(data[0]))]
       x=range(0, 100, 1)
       plt.clf()
-      plt.ylim(-100,60)
+      plt.ylim(-80,30)
       line1,=plt.plot(x,rez[0],label="L1")
       line2,=plt.plot(x,rez[1],label="L2")
       line3,=plt.plot(x,rez[2],label="L3")
