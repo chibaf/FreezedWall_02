@@ -5,6 +5,7 @@ import time
 from datetime import date
 import datetime
 from read_m5_class import m5logger
+from read_m5b_class import m5loggerb
 
 data0=[0]*20
 data=[data0]*100
@@ -12,7 +13,7 @@ data=[data0]*100
 ser1 = serial.Serial("/dev/ttyUSB0",115200)
 ser2 = serial.Serial("/dev/ttyUSB1",19200)
 sport1=m5logger()
-sport2=m5logger()
+sport2=m5loggerb()
 
 today = date.today()
 t=time.localtime()
