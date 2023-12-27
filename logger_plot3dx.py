@@ -63,7 +63,8 @@ while True:
       if len(array)==10:
         st=time.strftime("%Y %b %d %H:%M:%S", time.localtime())
         ss=str(time.time()-int(time.time()))
-        strg=str(st+ss[1:5])+","+str(ttime)+","+str(array[0])+","+str(array[1])+","+str(array[2])+","+str(array[3])+","+str(array[4])+","+str(array[5])+","+str(array[6])+","+str(array[7])+","+str(array[8])+","+str(array[9])
+        rttime=round(ttime,2)
+        strg=str(st+ss[1:5])+","+str(rttime)+","+str(array[0])+","+str(array[1])+","+str(array[2])+","+str(array[3])+","+str(array[4])+","+str(array[5])+","+str(array[6])+","+str(array[7])+","+str(array[8])+","+str(array[9])
          #+","+str(array[4])+","+str(array[5])+","+str(array[6])+","+str(array[7])+","+str(array[8])+","+str(array[9])+","+str(array[10])+","+str(array[11])+","+str(array[12])+","+str(array[13])+","+str(array[14])+","+str(array[15])+","+str(array[16])+","+str(array[17])+","+str(array[18])+","+str(array[19])
         f.write(strg+"\n")
         print(strg)
